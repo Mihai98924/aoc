@@ -49,8 +49,7 @@ public class problem1 {
                     verifyConditions(input);
                 }
             }
-            if(!cin.hasNextLine())
-                passValidation();
+            passValidation();
             System.out.println(totalValidPassports);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
