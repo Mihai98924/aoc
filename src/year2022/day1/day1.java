@@ -59,6 +59,7 @@ public class day1 {
 
     public static void main(String[] args) {
         try (Scanner cin = new Scanner(new File("src/year2022/day1/input.txt"))) {
+            problem1(cin);
             problem2(cin);
         } catch (FileNotFoundException ignored) {
         }
