@@ -44,22 +44,23 @@ def part1(matrix):
 
 def clean(matrix):
     for i in range(len(matrix)):
-        matrix[i].replace('X', '.')
-        matrix[i].replace('O', '.')
+        matrix[i] = matrix[i].replace('X', '.').replace('O', '.')
     return matrix
 
 def part2(matrix, queue):
     s = 0
     i, j = find_start(matrix)
     for q in queue:
+        matrix = clean(matrix)
+        matrix[i] = matrix[i][:j] + '^' + matrix[i][j+1:]
         if q == [i,j]:
             continue
         t = list(matrix[q[0]])
         t[q[1]] = 'O'
         matrix[q[0]] = ''.join(t)
         if lee(matrix, i, j, True) == True:
+            print(s)
             s += 1
-        matrix = clean(matrix)
     print(s)
 
 
