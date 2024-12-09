@@ -19,8 +19,7 @@ def checksum(data):
             s += int(data[i]) * i
     return s
 
-
-def part1(data):
+def decompose(data):
     string = []
     files = 0
     for i in range(len(data)):
@@ -29,7 +28,10 @@ def part1(data):
             files += 1
         else:
             string += "".join(['.'] * int(data[i]))
-    print([string[i] for i in range(len(string))])
+    return string
+
+def part1(data):
+    string = decompose(data)
     lt, rt = next_empty_spot(string, 0), last_filled_spot(string, len(string) - 1)
     while lt < rt:
         temp = string[rt]
