@@ -36,12 +36,6 @@ def part1(data):
         results = [(i, j) for i, j in trail if data[i][j] == '9']
         answer += int(len(results))
     print(answer)
-    # get_trail(0,2,data, trail)
-    # view = [[0 for _ in range(len(data[0]))] for _ in range(len(data))]
-    # for i,j in trail:
-    #     view[i][j] = int(data[i][j])
-    # for v in view:
-    #     print(v)
 
 
 with open("input.txt") as f:
